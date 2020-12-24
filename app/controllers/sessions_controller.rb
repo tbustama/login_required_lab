@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    session[:name] = params[:user][:name]
+    session[:name] = params[:name]
     if session[:name] == nil || session[:name] == ''
       redirect_to new_session_path
     else
@@ -12,10 +12,9 @@ class SessionsController < ApplicationController
   end
 
   def show
-
+    @user = self.current_user
   end
 
-  
 
   def destroy
     session.delete :name

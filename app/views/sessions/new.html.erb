@@ -1,6 +1,5 @@
 
-<%= form_for "user", url:'/sessions' do |f|%>
-    <%= f.label :name %>
-    <%= f.text_field :name %> <br> <br>
-    <%= f.submit "Log In" %>
-<% end %>
+<form method="post" action= "/sessions">
+  <input name='name'>
+  <input type='submit' value='log in'>
+</form> 
